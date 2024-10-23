@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id="changeColorBtn">Change Background Color</button>
+    <script>
+        $(document).ready(function() {
+            $('#changeColorBtn').click(function() {
+                const hexChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+                let randomColor = '#';
+                
+                for (let i = 0; i < 6; i++) {
+                    const randomIndex = Math.floor(Math.random() * hexChars.length);
+                    randomColor += hexChars[randomIndex];
+                }
+                
+                $('body').css('background-color', randomColor);
+            });
+        });
+    </script>
+</body>
+</html>

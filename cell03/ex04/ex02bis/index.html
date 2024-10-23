@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .calculator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .calculator input, .calculator select {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="calculator">
+        <input type="number" id="leftOperand" placeholder="Left Operand" min="0">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="number" id="rightOperand" placeholder="Right Operand" min="0">
+        <input type="button" value="Try me!" id="calculateBtn">
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#calculateBtn').click(function() {
+                const leftOperand = $('#leftOperand').val();
+                const operator = $('#operator').val();
+                const rightOperand = $('#rightOperand').val();
+
+                if (leftOperand === '' || rightOperand === '' || leftOperand < 0 || rightOperand < 0) {
+                    alert('Error :(');
+                    return;
+                }
+
+                const left = parseInt(leftOperand);
+                const right = parseInt(rightOperand);
+                let result;
+
+                switch (operator) {
+                    case '+':
+                        result = left + right;
+                        break;
+                    case '-':
+                        result = left - right;
+                        break;
+                    case '*':
+                        result = left * right;
+                        break;
+                    case '/':
+                        if (right === 0) {
+                            alert("It's over 9000!");
+                            console.log("It's over 9000!");
+                            return;
+                        }
+                        result = left / right;
+                        break;
+                    case '%':
+                        if (right === 0) {
+                            alert("It's over 9000!");
+                            console.log("It's over 9000!");
+                            return;
+                        }
+                        result = left % right;
+                        break;
+                    default:
+                        alert('Error :(');
+                        return;
+                }
+
+                alert(`Result: ${result}`);
+                console.log(`Result: ${result}`);
+            });
+
+            setInterval(() => {
+                alert('Please, use me...');
+            }, 30000);
+        });
+    </script>
+</body>
+</html>

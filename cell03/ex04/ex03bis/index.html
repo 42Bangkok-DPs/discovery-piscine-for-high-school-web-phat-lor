@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #newTodoBtn {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        #ft_list {
+            width: 300px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .todo-item {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id="newTodoBtn">New</button>
+    <div id="ft_list"></div>
+    <script>
+        $(document).ready(function() {
+            const ftList = $('#ft_list');
+            const newTodoBtn = $('#newTodoBtn');
+
+            // Load existing todos from cookies
+            loadTodos();
+
+            newTodoBtn.click(function() {
+                const todoText = prompt('Enter a new TO DO:');
+                if (todoText) {
+                    addTodo(todoText);
+                    saveTodos();
+                }
+            });
+
+            function addTodo(text) {
+                const todoItem = $('<div></div>').addClass('todo-item').text(text);
+                todoItem.click(function() {
+                    if (confirm('Do you want to remove this TO DO?')) {
+                        $(this).remove();
+                        saveTodos();
+                    }
+                });
+                ftList.prepend(todoItem);
+            }
+
+            function saveTodos() {
+                const todos = [];
+                $('.todo-item').each(function() {
+                    todos.push($(this).text());
+                });
+                document.cookie = `todos=${JSON.stringify(todos)};path=/`;
+            }
+
+            function loadTodos() {
+                const cookies = document.cookie.split(';');
+                for (let cookie of cookies) {
+                    const [name, value] = cookie.split('=').map(c => c.trim());
+                    if (name === 'todos') {
+                        const todos = JSON.parse(value);
+                        todos.forEach(todo => addTodo(todo));
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
