@@ -407,7 +407,6 @@ function applyData() {
 				div3.appendChild(div4);
 
 				const a = document.createElement("a");
-				a.href = project.link;
 				a.classList.add("hover:text-blue-500", "duration-300");
 				a.setAttribute("onclick", `window.open('${project.link}', "_blank")`);
 				a.innerHTML = `<svg
