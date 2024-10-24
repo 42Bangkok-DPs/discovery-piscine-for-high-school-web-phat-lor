@@ -1,48 +1,89 @@
 const data = {
-    "pat": {
-        "title": "Pat's Site",
+	pat: {
+		metadata: {
+			title: "Pat's Site",
+		},
+		landing: {
+			title: "Phat Lorthammakun",
+			subtitle: "Fullstack Developer",
+			image: "assets/images/pat.jpg",
+		},
+		about: {
+			title: "About Me",
+			subtitle: "I'm a fullstack developer from Thailand.",
+			description: "I'm a full...",
 
-    },
-    "tae": {
-        "title": "Tae's Site",
-    }
-}
+			skills: {
+				title: "Skills",
+				subtitle: "I have experience with the following technologies:",
+				skills: [
+					{ name: "HTML", icon: "https://skillicons.dev/icons?i=html" },
+					{ name: "CSS", icon: "https://skillicons.dev/icons?i=CSS" },
+				],
+			},
+
+			education: {
+				title: "Education",
+				education: [
+					{
+						name: "Bangkok Christian College",
+						description: "High School",
+						icon: "https://skillicons.dev/icons?i=computer-science",
+						time: "20xx - Today",
+						subtitle:
+							"Atttended high school at Bangkok Christian College in Thailand with a focus on computer science.",
+					},
+					{
+						name: "Test",
+						description: "Middle School",
+						icon: "https://skillicons.dev/icons?i=computer-science",
+						time: "20xx - Today",
+						subtitle: "Atttended yaddee yaadaa.",
+					},
+				],
+			},
+		},
+	},
+	tar: {
+		metadata: {
+			title: "Tar's Site",
+		},
+	},
+};
 
 function applyData() {
-    const url = window.location.href;
-    const id = url.split('#')[1];
-    const port = data[id];
+	console.log("applyData");
 
-    if (!port) {
-        showErrorModal({
-            title: "An error has occured!",
-            subtitle: "Portfolio not found!",
-            description: "Please try again later."
-        });
+	// check if
+	const url = window.location.href;
+	const id = url.split("#")[1];
+	const port = data[id];
 
-        setTimeout(() => {
-            window.location.href = "/";
-        }, 1000);
-        return;
-    }
+	if (!port) {
+		showErrorModal({
+			title: "Invalid Portfolio",
+			subtitle: "Portfolio not found!",
+			description: "Please try again later.",
+		});
 
-    try {
-        document.title = port.title;
-        document.getElementById('title').innerHTML = port.title;
+		setTimeout(() => {
+			window.location.href = "/";
+		}, 1000);
+		return;
+	}
 
-        showContent();
-        hideLoadingModal();
-    } catch (e) {
-        showErrorModal({
-            title: "An error has occured!",
-            subtitle: "Portfolio not found!",
-            description: "Please try again later."
-        });
+	try {
+		document.title = port.title;
 
-        setTimeout(() => {
-            window.location.href = "/";
-        }, 1000);
-    }
+		showContent();
+		hideLoadingModal();
+	} catch (e) {
+		console.error(e);
+		showErrorModal();
 
+		setTimeout(() => {
+			window.location.href = "/";
+		}, 1000);
+	}
 }
-applyData();
+// wait for the page to load

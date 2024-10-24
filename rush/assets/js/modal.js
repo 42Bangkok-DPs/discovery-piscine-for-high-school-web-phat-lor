@@ -111,19 +111,22 @@ function showLoadingModal() {
 		description: string
 	}
 */
-function showErrorModal(error = {
-	title: "Error has occured!",
-	subtitle: "Something went wrong!",
-	description: "Please try again later."
-}) {
+function showErrorModal(
+	error = {
+		title: "Error has occured!",
+		subtitle: "Something went wrong!",
+		description: "Please try again later.",
+	}
+) {
 	const climbingBall = document.querySelector(".la-ball-climbing-dot");
 	const loadingTitle = document.getElementById("loading-title");
 	const loadingSubtitle = document.getElementById("loading-subtitle");
 	const loadingDesc = document.getElementById("loading-desc");
 
-	loadingTitle.innerText = error.title;
-	loadingSubtitle.innerText = error.subtitle;
-	loadingDesc.innerText = error.description;
+	if (loadingTitle) loadingTitle.innerText = error.title;
+	if (loadingSubtitle) loadingSubtitle.innerText = error.subtitle;
+	if (loadingDesc) loadingDesc.innerText = error.description;
+
 	climbingBall.classList.add(
 		"translate-x-1/2",
 		"opacity-0",
@@ -151,17 +154,9 @@ function showErrorModal(error = {
 				"scale-125",
 				"rotate-90"
 			);
-
-
 		}, 0);
-	
 	}, 300);
 }
-
-
-
-
-
 
 function hideLoadingModal() {
 	const climbingBall = document.querySelector(".la-ball-climbing-dot");
@@ -222,7 +217,6 @@ function hideLoadingModal() {
 			setTimeout(() => {
 				hideModal();
 			}, 500);
-
 		}, 0);
 	}, 300);
 }

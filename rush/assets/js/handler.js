@@ -1,10 +1,9 @@
-const manualRequired = ["portfolio", "portfolio.html"]
+const manualRequired = ["portfolio", "portfolio.html"];
 
 function handlePageLoad() {
-
 	// change to false for cool loading animation
 	var instant = false;
-	if(instant) {
+	if (instant) {
 		showContent();
 
 		hideLoadingModal();
@@ -14,10 +13,11 @@ function handlePageLoad() {
 	showModal();
 	showLoadingModal();
 
-	console.log(window.location.pathname.split("/")[1])
+	console.log(window.location.pathname.split("/")[1]);
 
-	if(manualRequired.includes(window.location.pathname.split("/")[1])) {
+	if (manualRequired.includes(window.location.pathname.split("/")[1])) {
 		console.warn("Manual page load required");
+		applyData();
 		return;
 	}
 

@@ -18,36 +18,162 @@
 		/>
 
 		<!-- Tailwind CSS -->
-		<script src="assets/js/handler.js" crossorigin="anonymous"></script>
+		<script src="assets/js/handler.js" crossorigin="anonymous" defer></script>
 		<script src="assets/js/tailwind.js" crossorigin="anonymous"></script>
 		<script src="assets/js/tailwind.config.js" crossorigin="anonymous"></script>
-		<!-- Plugins from docs -->
+		<!-- Uncomment if using Tailwind CSS CDN -->
 		<!-- <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script> -->
 	</head>
 	<body
-		class="font-body bg-background text-text flex justify-center items-center min-h-screen"
+		class="font-body bg-background text-text flex flex-col justify-center items-center min-h-screen mx-auto w-full max-w-screen-xl"
 	>
 		<!-- A Text Effect on the background -->
 		<div
 			class="decorations overflow-x-hidden w-screen h-screen absolute top-0 left-1/2 -translate-x-1/2 select-none"
 		>
 			<h1
-				class="text-[300px] font-semibold absolute text-[#FFFFFF08] absolute top-1/2 -translate-y-[calc(50%+150px)] -translate-x-1/2 left-1/2"
+				class="text-[300px] font-semibold absolute text-[#FFFFFF08] top-1/2 -translate-y-[calc(50%+150px)] -translate-x-1/2 left-1/2"
 			>
 				PORT
 			</h1>
 			<h1
-				class="text-[300px] font-semibold absolute text-[#FFFFFF08] absolute top-1/2 -translate-y-[calc(50%-150px)] -translate-x-1/2 left-1/2"
+				class="text-[300px] font-semibold absolute text-[#FFFFFF08] top-1/2 -translate-y-[calc(50%-150px)] -translate-x-1/2 left-1/2"
 			>
 				PORT
 			</h1>
 		</div>
 		<div
-			class="flex flex-col gap-4 z-10 p-10 py-20 items-center justify-center w-full md:p-32 h-screen opacity-0 duration-300"
+			class="flex flex-col gap-2 z-10 p-10 py-20 w-full md:px-12 min-h-screen opacity-0 duration-300"
 			id="content"
 		>
-			<p class="text-2xl md:text-4xl font-bold">Hello world</p>
+			<div
+				class="flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] rounded-full dark:bg-black bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-7 py-2 items-center justify-center space-x-4 w-full"
+			>
+				<!-- Links -->
+				<a
+					href="link1"
+					class="relative dark:text-neutral-50 items-center flex text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+				>
+					<span class="block sm:hidden">🏠</span>
+					<span class="hidden sm:block text-sm">Home</span>
+				</a>
+				<a
+					href="link2"
+					class="relative dark:text-neutral-50 items-center flex text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+				>
+					<span class="block sm:hidden">🔗</span>
+					<span class="hidden sm:block text-sm">About</span>
+				</a>
+				<a
+					href="link3"
+					class="relative dark:text-neutral-50 items-center flex text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+				>
+					<span class="block sm:hidden">📚</span>
+					<span class="hidden sm:block text-sm">Projects</span>
+				</a>
+			</div>
+			<div
+				id="home"
+				class="mt-10 flex flex-col items-center gap-20 md:flex-row"
+			>
+				<img
+					src="assets/img/phat.png"
+					alt="Port Image"
+					class="w-72 h-72 object-contain backdrop-blur-lg bg-[#20202060] rounded-full border border-[#00000050] bg-opacity-5"
+				/>
+				<div>
+					<p class="text-2xl md:text-3xl font-bold">Phat Lorthammakun</p>
+					<p>Fullstack Developer</p>
+				</div>
+			</div>
+
+			<div
+				id="about"
+				class="mt-10 flex flex-col justify-center gap-6 md:flex-row w-full h-full"
+			>
+				<!-- Left Section (Skills and Education) -->
+				<div class="flex flex-col gap-6">
+					<!-- Skills Card -->
+					<div
+						class="overflow-hidden rounded-lg shadow w-full h-48 border border-[#FFFFFF08]/10 min-w-[300px] backdrop-filter backdrop-blur-lg bg-gray-300 bg-opacity-5"
+					>
+						<div class="px-4 py-5 sm:p-6">
+							<h2 class="font-bold">Skills</h2>
+							<div
+								id="skills-content"
+								class="mt-2 grid grid-cols-3 gap-2 overflow-y-auto h-36 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-500"
+							>
+								<div class="flex-row flex gap-1 items-center">
+									<img
+										src="https://skillicons.dev/icons?i=html"
+										alt="HTML"
+										class="w-7 h-7"
+									/>
+									<p>HTML</p>
+								</div>
+								<div class="flex-row flex gap-1 items-center">
+									<img
+										src="https://skillicons.dev/icons?i=css"
+										alt="CSS"
+										class="w-7 h-7"
+									/>
+									<p>CSS</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Education Card -->
+					<div
+						class="overflow-hidden rounded-lg shadow w-full h-48 border border-[#FFFFFF08]/10 min-w-[300px] backdrop-filter backdrop-blur-lg bg-gray-300 bg-opacity-5"
+					>
+						<div class="px-4 py-5 sm:p-6">
+							<h2 class="font-bold">Education</h2>
+							<!-- Education content goes here -->
+						</div>
+					</div>
+				</div>
+
+				<!-- Right Section (About Me and Contact) -->
+				<div class="flex-1">
+					<div
+						class="overflow-hidden rounded-lg shadow w-full h-full border border-[#FFFFFF08]/10 backdrop-filter backdrop-blur-lg bg-gray-300 bg-opacity-5"
+					>
+						<div class="px-4 py-5 sm:p-6">
+							<h2 class="font-bold">About Me</h2>
+							<!-- About me content goes here -->
+
+							<!-- Contact Section -->
+							<h2 class="font-bold mt-6">Contact</h2>
+							<ul class="mt-2 space-y-2">
+								<li><input type="checkbox" /> Option 1</li>
+								<li><input type="checkbox" /> Option 2</li>
+								<li><input type="checkbox" /> Option 3</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div
+				id="projects"
+				class="mt-10 flex flex-col justify-center gap-6 md:flex-row w-full h-full"
+			>
+				<!-- Projects content goes here -->
+			</div>
 		</div>
+		<footer>
+			<div
+				class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8"
+			>
+				<!-- Footer content goes here -->
+			</div>
+			<div class="mt-8 md:order-1 md:mt-0">
+				<p class="text-center text-xs leading-5 text-gray-500">
+					&copy; 2024 Phat Lorthammakun. All rights reserved.
+				</p>
+			</div>
+		</footer>
 
 		<div
 			id="modal-container"
@@ -62,6 +188,5 @@
 		<!-- Page Script -->
 		<script src="assets/js/modal.js" crossorigin="anonymous"></script>
 		<script src="assets/js/portfolio.js" crossorigin="anonymous"></script>
-
 	</body>
 </html>
