@@ -36,6 +36,12 @@ const data = {
 					},
 					{ name: "Express", icon: "https://skillicons.dev/icons?i=express" },
 					{ name: "Git", icon: "https://skillicons.dev/icons?i=git" },
+					{ name: "Docker", icon: "https://skillicons.dev/icons?i=docker" },
+					{ name: "Nginx", icon: "https://skillicons.dev/icons?i=nginx" },
+					{
+						name: "Cloudflare",
+						icon: "https://skillicons.dev/icons?i=cloudflare",
+					},
 				],
 			},
 
