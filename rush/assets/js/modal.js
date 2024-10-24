@@ -1,7 +1,7 @@
 /*
-    author: @phat-lor
-    created: 2024-10-23
-    please give credit if you use this code or snippet thanks :3
+	author: @phat-lor
+	created: 2024-10-23
+	please give credit if you use this code or snippet thanks :3
 */
 
 let modalContainer = document.getElementById("modal-container");
@@ -103,6 +103,66 @@ function showLoadingModal() {
             </div>`;
 }
 
+/*
+	Take in 
+	error: {
+		title: string,
+		subtitle: string,
+		description: string
+	}
+*/
+function showErrorModal(error = {
+	title: "Error has occured!",
+	subtitle: "Something went wrong!",
+	description: "Please try again later."
+}) {
+	const climbingBall = document.querySelector(".la-ball-climbing-dot");
+	const loadingTitle = document.getElementById("loading-title");
+	const loadingSubtitle = document.getElementById("loading-subtitle");
+	const loadingDesc = document.getElementById("loading-desc");
+
+	loadingTitle.innerText = error.title;
+	loadingSubtitle.innerText = error.subtitle;
+	loadingDesc.innerText = error.description;
+	climbingBall.classList.add(
+		"translate-x-1/2",
+		"opacity-0",
+		"blur-md",
+		"duration-300",
+		"scale-125",
+		"-rotate-90"
+	);
+
+	setTimeout(() => {
+		climbingBall.classList.remove("duration-300", "-rotate-90");
+		climbingBall.classList.add(
+			"flex",
+			"justify-center",
+			"items-center",
+			"rotate-90"
+		);
+		climbingBall.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 15 15"><path fill="#F31260" d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27"/></svg>`;
+		setTimeout(() => {
+			climbingBall.classList.add("duration-300");
+			climbingBall.classList.remove(
+				"translate-x-1/2",
+				"opacity-0",
+				"blur-md",
+				"scale-125",
+				"rotate-90"
+			);
+
+
+		}, 0);
+	
+	}, 300);
+}
+
+
+
+
+
+
 function hideLoadingModal() {
 	const climbingBall = document.querySelector(".la-ball-climbing-dot");
 	const loadingTitle = document.getElementById("loading-title");
@@ -161,7 +221,8 @@ function hideLoadingModal() {
 
 			setTimeout(() => {
 				hideModal();
-			}, 750);
+			}, 500);
+
 		}, 0);
 	}, 300);
 }
