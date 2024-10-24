@@ -25,7 +25,7 @@
 		<!-- <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script> -->
 	</head>
 	<body
-		class="font-body bg-background text-text flex flex-col justify-center items-center min-h-screen mx-auto w-full max-w-screen-xl"
+		class="font-body bg-background text-text flex flex-col justify-center items-center min-h-screen mx-auto w-full max-w-screen-xl overflow-x-hidden"
 	>
 		<!-- A Text Effect on the background -->
 		<div
@@ -77,13 +77,14 @@
 				class="mt-10 flex flex-col items-center gap-20 md:flex-row"
 			>
 				<img
-					src="assets/img/phat.png"
+					src=""
 					alt="Port Image"
+					id="landing-image"
 					class="w-72 h-72 object-contain backdrop-blur-lg bg-[#20202060] rounded-full border border-[#00000050] bg-opacity-5"
 				/>
 				<div>
-					<p class="text-2xl md:text-3xl font-bold">Phat Lorthammakun</p>
-					<p>Fullstack Developer</p>
+					<p class="text-2xl md:text-3xl font-bold" id="landing-title">Title</p>
+					<p id="landing-subtitle">Subtitle</p>
 				</div>
 			</div>
 
@@ -101,25 +102,8 @@
 							<h2 class="font-bold">Skills</h2>
 							<div
 								id="skills-content"
-								class="mt-2 grid grid-cols-3 gap-2 overflow-y-auto h-36 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-500"
-							>
-								<div class="flex-row flex gap-1 items-center">
-									<img
-										src="https://skillicons.dev/icons?i=html"
-										alt="HTML"
-										class="w-7 h-7"
-									/>
-									<p>HTML</p>
-								</div>
-								<div class="flex-row flex gap-1 items-center">
-									<img
-										src="https://skillicons.dev/icons?i=css"
-										alt="CSS"
-										class="w-7 h-7"
-									/>
-									<p>CSS</p>
-								</div>
-							</div>
+								class="mt-2 grid grid-cols-3 gap-2 overflow-y-auto h-36 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-500 auto-rows-max hidescroll"
+							></div>
 						</div>
 					</div>
 
@@ -130,6 +114,73 @@
 						<div class="px-4 py-5 sm:p-6">
 							<h2 class="font-bold">Education</h2>
 							<!-- Education content goes here -->
+
+							<div
+								class="w-80 mt-4 overflow-y-auto h-36 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-500 hidescroll"
+							>
+								<ul id="education-content">
+									<li class="relative flex items-baseline gap-6 pb-5">
+										<div
+											class="before:absolute before:left-[5.5px] before:h-full before:w-[1px] before:bg-white"
+										>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="12"
+												height="12"
+												class="bi bi-circle-fill fill-white"
+												viewBox="0 0 16 16"
+											>
+												<circle cx="8" cy="8" r="8" />
+											</svg>
+										</div>
+										<div>
+											<p class="text-sm">18-8-2022</p>
+											<p class="mt-2 text-sm">
+												Study at Bangkok Christian Collegeß
+											</p>
+										</div>
+									</li>
+									<li class="relative flex items-baseline gap-6 pb-5">
+										<div
+											class="before:absolute before:left-[5.5px] before:h-full before:w-[1px] before:bg-white"
+										>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="12"
+												height="12"
+												class="bi bi-circle-fill fill-white"
+												viewBox="0 0 16 16"
+											>
+												<circle cx="8" cy="8" r="8" />
+											</svg>
+										</div>
+										<div>
+											<p class="text-sm">18-8-2022</p>
+											<p class="mt-2 text-sm">Lorem ipsum dolor sit amet.</p>
+										</div>
+									</li>
+									<li class="relative flex items-baseline gap-6 pb-5">
+										<div>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												width="12"
+												height="12"
+												class="bi bi-circle-fill fill-white"
+												viewBox="0 0 16 16"
+											>
+												<circle cx="8" cy="8" r="8" />
+											</svg>
+										</div>
+										<div>
+											<p class="text-sm">18-8-2022</p>
+											<p class="mt-2 text-sm">
+												Lorem ipsum dolor sit, amet consectetur adipisicing
+												elit. Est?
+											</p>
+										</div>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -142,6 +193,7 @@
 						<div class="px-4 py-5 sm:p-6">
 							<h2 class="font-bold">About Me</h2>
 							<!-- About me content goes here -->
+							<div id="about-content" class="mt-2"></div>
 
 							<!-- Contact Section -->
 							<h2 class="font-bold mt-6">Contact</h2>
@@ -157,11 +209,41 @@
 
 			<div
 				id="projects"
-				class="mt-10 flex flex-col justify-center gap-6 md:flex-row w-full h-full"
+				class="mt-10 flex justify-left gap-6 w-full h-full flex-col"
 			>
 				<!-- Projects content goes here -->
+
+				<p class="text-2xl md:text-3xl font-bold">Projects</p>
+
+				<div class="w-full h-full grid grid-cols-1 gap-3 md:grid-cols-3">
+					<div
+						class="overflow-hidden rounded-lg shadow w-full h-64 border border-[#FFFFFF08]/10 min-w-[300px] backdrop-filter backdrop-blur-lg bg-gray-300 bg-opacity-5"
+					>
+						<div class="px-4 py-5 sm:p-6">
+							<h2 class="font-bold">Project 1</h2>
+							<!-- Project 1 content goes here -->
+						</div>
+					</div>
+					<div
+						class="overflow-hidden rounded-lg shadow w-full h-64 border border-[#FFFFFF08]/10 min-w-[300px] backdrop-filter backdrop-blur-lg bg-gray-300 bg-opacity-5"
+					>
+						<div class="px-4 py-5 sm:p-6">
+							<h2 class="font-bold">Project 1</h2>
+							<!-- Project 1 content goes here -->
+						</div>
+					</div>
+					<div
+						class="overflow-hidden rounded-lg shadow w-full h-64 border border-[#FFFFFF08]/10 min-w-[300px] backdrop-filter backdrop-blur-lg bg-gray-300 bg-opacity-5"
+					>
+						<div class="px-4 py-5 sm:p-6">
+							<h2 class="font-bold">Project 1</h2>
+							<!-- Project 1 content goes here -->
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+
 		<footer>
 			<div
 				class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8"
