@@ -51,7 +51,7 @@ const data = {
 					{
 						name: "Freelance",
 						description: "Fullstack Developer",
-						time: "20xx - Today",
+						time: "1 May 2024 - Today",
 					},
 					{
 						name: "Intern at dData",
@@ -67,18 +67,13 @@ const data = {
 				education: [
 					{
 						name: "Bangkok Christian College",
-						description: "High School",
-						time: "20xx - Today",
+						description: "Secondary Education",
+						time: "2019 - Today",
 					},
 					{
-						name: "Test",
-						description: "Middle School",
-						time: "20xx - 20xx",
-					},
-					{
-						name: "Test",
-						description: "Elementary School",
-						time: "20xx - 20xx",
+						name: "Bangkok Christian College",
+						description: "Primary Education",
+						time: "2013 - 2018",
 					},
 				],
 			},
@@ -93,7 +88,7 @@ const data = {
 					},
 					{
 						name: "Discord",
-						link: "https://discord.com/users/xxx",
+						link: "https://discord.com/users/1220546266480775198",
 						icon: "https://skillicons.dev/icons?i=discord",
 					},
 					{
@@ -198,7 +193,108 @@ const data = {
 	},
 	tar: {
 		metadata: {
-			title: "Tar's Site",
+			title: "Tae's Site",
+		},
+		landing: {
+			title: "Kittipong Meeanan ",
+			subtitle: "Web Designer",
+			image: "assets/img/tar.png",
+		},
+		about: {
+			title: "About Me",
+			description:
+				"Hi! I'm a web designer and I love to design websites and make them look good. I'm always looking for new projects to work on and new things to learn.",
+			skills: {
+				title: "Skills",
+				subtitle: "I have experience with the following technologies:",
+				skills: [
+					{ name: "HTML", icon: "https://skillicons.dev/icons?i=html" },
+					{
+						name: "JS",
+						icon: "https://skillicons.dev/icons?i=javascript",
+					},
+					{ name: "CSS", icon: "https://skillicons.dev/icons?i=css" },
+					{ name: "Python", icon: "https://skillicons.dev/icons?i=python" }
+				
+				],
+			},
+
+			workExp: {
+				title: "Work Experience",
+				workExp: [
+					{
+						name: "Bartender at The Bar",
+						description: "Cooked drinks and served customers",
+						time: "30 June 2023 - Today",
+					},
+					{
+						name: "Trainer at The Gym",
+						description:
+							"Trained people to get fit and healthy",
+						time: "1 May - 29 June 2023",
+					},
+				],
+			},
+
+			education: {
+				title: "Education",
+				education: [
+					{
+						name: "Protpittayapayat School",
+						description: "High School",
+						time: "20xx - Today",
+					},
+					{
+						name: "Protpittayapayat School",
+						description: "Middle School",
+						time: "20xx - 2021",
+					},
+				
+				],
+			},
+			socials: {
+				title: "Socials",
+				socials: [
+					{
+						name: "GitHub",
+						link: "https://github.com/tarwws",
+						icon: "https://skillicons.dev/icons?i=github",
+					},
+					{
+						name: "Discord",
+						link: "https://discord.com/users/531481461832810517",
+						icon: "https://skillicons.dev/icons?i=discord",
+					},
+					{
+						name: "Email",
+						link: "mailto:tartarwws@gmail.com",
+						icon: "https://skillicons.dev/icons?i=gmail",
+					},
+					{
+						name: "Instagram",
+						link: "https://instagram.com/Kittipong_Meeanan",
+						icon: "https://skillicons.dev/icons?i=instagram",
+					},
+				],
+			},
+		},
+		project: {
+			title: "Projects",
+			projects: [
+				{
+					name: "Portfolio website",
+					description:
+						"My rush project for 42Bangkok's Piscine. It's a simple portfolio website.",
+					tech: [
+						"js",
+						"tailwindcss",
+						"html",
+						"css",
+					],
+					link: "https://epiccatto.github.io/",
+					image: "/assets/img/web.png",
+				},
+			],
 		},
 	},
 };
