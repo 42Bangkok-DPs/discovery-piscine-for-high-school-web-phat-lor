@@ -214,8 +214,7 @@ const data = {
 						icon: "https://skillicons.dev/icons?i=javascript",
 					},
 					{ name: "CSS", icon: "https://skillicons.dev/icons?i=css" },
-					{ name: "Python", icon: "https://skillicons.dev/icons?i=python" }
-				
+					{ name: "Python", icon: "https://skillicons.dev/icons?i=python" },
 				],
 			},
 
@@ -229,8 +228,7 @@ const data = {
 					},
 					{
 						name: "Trainer at The Gym",
-						description:
-							"Trained people to get fit and healthy",
+						description: "Trained people to get fit and healthy",
 						time: "1 May - 29 June 2023",
 					},
 				],
@@ -249,7 +247,6 @@ const data = {
 						description: "Middle School",
 						time: "20xx - 2021",
 					},
-				
 				],
 			},
 			socials: {
@@ -285,12 +282,7 @@ const data = {
 					name: "Portfolio website",
 					description:
 						"My rush project for 42Bangkok's Piscine. It's a simple portfolio website.",
-					tech: [
-						"js",
-						"tailwindcss",
-						"html",
-						"css",
-					],
+					tech: ["js", "tailwindcss", "html", "css"],
 					link: "https://epiccatto.github.io/",
 					image: "/assets/img/web.png",
 				},
